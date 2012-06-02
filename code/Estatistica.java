@@ -2,7 +2,7 @@ public class Estatistica{
 	public int numeroVagas;
 	public float duracaoSimulacao;
 	public int numeroTotalRequisicaoVagas;
-	public int numeroFalhasEmVagasOcupadas;			//numero de vagas que naum poderam ser ocupadas por estarem todas ocupadas
+	public int numeroFalhasEmVagasOcupadas;	//numero de vagas que naum poderam ser ocupadas por estarem todas ocupadas
 	
 	public Estatistica(){
 		numeroVagas = 0;
