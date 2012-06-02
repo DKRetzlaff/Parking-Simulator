@@ -1,4 +1,5 @@
-public class DesalocaVaga extends Evento{
+public class DesalocaVaga extends Evento
+{
 	
 	public static void main(int n)
 	{
