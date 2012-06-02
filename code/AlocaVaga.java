@@ -1,12 +1,15 @@
-﻿public class AlocaVaga extends Evento {
+﻿public class AlocaVaga extends Evento
+﻿{
     
-        public static void main(int n){
+        public static void main(int n)
+        {
             
             Aloca(n);
 
 
         }
-        public static void Aloca(int n){
+        public static void Aloca(int n)
+        {
          
             Estacionamento.vagas[n]=true;
             /*n vai receber BuscaVaga()
@@ -14,7 +17,8 @@
             caso nao tenha valor nao faz nada pois nao tem a vaga*/
        
         }
-       public void Aloca(){        
+       public void Aloca()
+       {        
 
 
         }
