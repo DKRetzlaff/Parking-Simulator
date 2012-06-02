@@ -1,5 +1,5 @@
-
-public class Estacionamento {
+public class Estacionamento 
+{
 
     // vetor boolean de vagas do estacionamento
     private boolean vagas[];
@@ -7,7 +7,8 @@ public class Estacionamento {
     /**
      * Construtor Default
      */
-    public Estacionamento() {
+    public Estacionamento() 
+    {
         vagas = new boolean[10];
     }
 
@@ -16,9 +17,10 @@ public class Estacionamento {
      * Construtor com parametro
      * @param n -> representa o numero de vagas do estacionamento
      */
-    public Estacionamento(int n) {
+    public Estacionamento(int n) 
+    {
         vagas = new boolean[n];
-}
+    }
 
 
     /**
@@ -26,16 +28,17 @@ public class Estacionamento {
      * @param n
      * @return retorna a vaga (V - F) na posicao n
      */
-    public boolean getVaga(int n){
-    
-    return this.vagas[n];
+    public boolean getVaga(int n)
+    {
+        return this.vagas[n];
     }
 
     /**
      * altera o valor do vetor vagas na posicao n
      * @param n
      */
-    public void setVaga(int n){
+    public void setVaga(int n)
+    {
 
         this.vagas[n] = true;
 
@@ -46,15 +49,17 @@ public class Estacionamento {
      * @param n -> numero de vagas total
      * @return numero de vagas disponiveis
      */
-    public int vagaSobrando(int n){
+    public int vagaSobrando(int n)
+    {
         int i, cont = 0;
 
-        for (i = 0; i < n; i++){
+        for (i = 0; i < n; i++)
+        {
             if (vagas[i])
                 cont++;
         }
         
-     return cont;
+        return cont;
     }
 
 }
