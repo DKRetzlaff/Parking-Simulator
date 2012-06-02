@@ -17,8 +17,8 @@
             caso nao tenha valor nao faz nada pois nao tem a vaga*/
        
         }
-       public void Aloca()
-       {        
+        public void Aloca()
+        {        
 
 
         }
