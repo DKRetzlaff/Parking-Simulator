@@ -1,70 +1,58 @@
-public class Estacionamento 
-{
+public class Estacionamento {
 
     // vetor boolean de vagas do estacionamento
     private boolean vagas[];
-    private static int numeroTotalVagas;
+    private int numVagas;
+
     /**
      * Construtor Default
      */
-    public Estacionamento() 
-    {
+    private Estacionamento() {
+		int i;
+		numVagas = 10;
         vagas = new boolean[10];
-        numeroTotalVagas = 10;
+        for(i = 0; i < 10; i++){
+			vagas[i] = true;
+		}
     }
 
 
     /**
      * Construtor com parametro
-     * cria um estacionamento com o tamanhoTotalVagas estipulado
+     * @param n -> representa o numero de vagas do estacionamento
      */
-    public Estacionamento(int tamanhoTotalVagas) 
-    {
-        vagas = new boolean[tamanhoTotalVagas];
-        numeroTotalVagas = tamanhoTotalVagas;
-    }
-
+    private Estacionamento(int n) {
+		numVagas = n;
+        vagas = new boolean[n];
+        for(i = 0; i < n; i++){
+			vagas[i] = true;
+		}
+	}
 
     /**
-     * getVaga
-     * 
-     * retorna o boolean que esta na posicao informada do vetor de vagas
+     * altera o valor do vetor vagas na posicao n
+     * @param n
      */
-    public boolean getVaga(int posicao){
-    
-        return this.vagas[posicao];
-    }
-
-    /*
-     * Altera o boolean na posicao informada do vetor vagas
-     */
-    public void setVaga(int posicao){
-
-        if(this.vagas[posicao] == false)
-            this.vagas[posicao] = true;
-        else
-            this.vagas[posicao] = false;
-        
+    public void setVaga(int n, boolean val){
+        this.vagas[n] = val;        
     }
 
     /**
-     * verifica qual vaga esta diponivel
-     * @return a vaga disponivel ou , caso nao haja nenhuma disponivel retorna o tamanho do estacionamento + 1;
-     * motor faz o controle do erro
+     * verifica quantas vagas estao diponiveis
+     * @param n -> numero de vagas total
+     * @return numero de vagas disponiveis
      */
-    public int buscaVaga()
-    {
+    public int buscaVaga(){
         int i;
 
-        for (i = 0; i < numeroTotalVagas; i++)
-        {
-            if (vagas[i] == false)
-            {
+        for (i = 0; i < numVagas; i++){
+            if (vagas[i] == true)
                 return i;
-            }
+            else
+				return -1;
         }
-        i++
-        return i;
+        
+     return cont;
     }
 
 }
