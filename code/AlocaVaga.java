@@ -1,5 +1,8 @@
+import java.util.Random
+
 public class AlocaVaga extends Evento{
-	
+    private double hora;
+    private Random aleatorio;	
     private int n;
 	
     public AlocaVaga(){
@@ -13,6 +16,9 @@ public class AlocaVaga extends Evento{
     }
     
     public Evento gerarProximo(){
-		
+        aleatorio = new Random();
+        hora = aleatorio.nextDouble();
+	Evento e = new DesalocaVaga(n, hora);
+        return e;
     }
 }
