@@ -48,21 +48,22 @@ public class Estacionamento
     }
 
     /**
-     * verifica quantas vagas estao diponiveis
-     * @return numero de vagas disponiveis
+     * verifica qual vaga esta diponivel
+     * @return a vaga disponivel ou , caso nao haja nenhuma disponivel retorna o tamanho do estacionamento + 1;
      */
-    public int vagaSobrando()
+    public int buscaVaga()
     {
-        int i, contadorVagasLivres = 0;
+        int i;
 
         for (i = 0; i < numeroTotalVagas; i++)
         {
             if (vagas[i] == false)
             {
-                contadorVagasLivres++;
+                return i;
             }
         }
-        return contadorVagasLivres;
+        i++
+        return i;
     }
 
 }
