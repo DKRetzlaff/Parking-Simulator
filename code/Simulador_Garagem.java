@@ -5,12 +5,11 @@
 *
 */
 
-public class Simulador_Garagem 
-{
+import java.util.Random
 
-	public static ListaDeAcoes carregarListaDeSimulacao()
-	{
-		/* Alterar */
+public class Simulador_Garagem{
+
+	public static ListaDeAcoes carregarListaDeSimulacao(){
 		ListaDeAcoes temp = new ListaDeAcoes();
 		return temp;
 	}
@@ -21,9 +20,7 @@ public class Simulador_Garagem
 	* @param Acao acao
 	* @return Boolean {true - se executou com sucesso | false - se não conseguiu executar }
 	*/
-	public static boolean executarAcao(Evento acao)
-	{
-		/* Alterar */
+	public static boolean executarAcao(Evento acao){
 		return true;
 	}
 
@@ -32,18 +29,15 @@ public class Simulador_Garagem
 	* @param args the command line arguments
 	*/
 	public static void main(String[] args){
+		Random random = new Random();
 		Relogio relogio = Relogio.getRelogio();
 		Evento tempAcao;
 		ListaDeAcoes lista = carregarListaDeSimulacao();
 		
-		int vagas;
 		double duracao;
 		
-		vagas = system.in()
-		duracao = system.in()
-		
-		Estacionamento garagem = new Estacionamento(vagas);
-		lista.setAcao(AbrirEstacionamento(duracao));		
+		duracao = random.nextDouble(30);		
+		lista.setAcao(AlocaVaga(duracao));		
 		
 		if(lista == null){
 			System.out.printf("Não há ações para simular");
@@ -58,11 +52,9 @@ public class Simulador_Garagem
 					lista.setAcao(tempAcao.gerarProximo());
 				}
 			}
-			else 
-			{
-				/* Alterar */
+			else{
 			}
 		}
-
+		Estatisca.geraRelatorio();
 	}
 }
