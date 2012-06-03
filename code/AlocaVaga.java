@@ -1,10 +1,18 @@
 public class AlocaVaga extends Evento{
-
-    //Troca o valor para true ou falso da posicao x;
-    public void estaciona(Estacionamento setar, int x)
-    {
-            setar.setVaga(x);
+	
+    private int n;
+	
+    public AlocaVaga(){
+	n = buscaVaga();
     }
 
-
+    public void execucao(){
+	if(n > 0 && n <= vagas){
+            setVaga(n, false);
+	}
+    }
+    
+    public Evento gerarProximo(){
+		
+    }
 }
