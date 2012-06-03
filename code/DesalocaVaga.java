@@ -1,17 +1,24 @@
+public class DesalocaVaga extends Evento
+{
 
-public class DesalocaVaga extends Evento{
+    //Método utilizado para desestacionar um veiculo que se encontra na posição x;
+    public boolean desestaciona(Estacionamento veiculo, int x)
+    {
+        boolean flagAux;
+        
+        
+        flagAux = veiculo.getVaga(x);
 
-
-    public boolean desestaciona(Estacionamento a, int n){
-        boolean c;
-
-       c = a.getVaga(n);
-
-       if(c == false)
-           return false;
-       else
-           a.setVaga(n);
-    return true;
+        if(flagAux == false)
+        {
+            return false;
+        }
+        else
+        {
+            veiculo.setVaga(x);
+            return true;
+        }
+    
     }
 
 }
