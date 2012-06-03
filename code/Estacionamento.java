@@ -1,4 +1,3 @@
-
 public class Estacionamento {
 
     // vetor boolean de vagas do estacionamento
@@ -31,16 +30,16 @@ public class Estacionamento {
     return this.vagas[n];
     }
 
-    /**
-     * altera o valor do vetor vagas na posicao n
+    /*
+     * Altera o valor do vetor vagas na posição x
      * @param n
      */
-    public void setVaga(int n){
+    public void setVaga(int x){
 
-        if(this.vagas[n] == false)
-            this.vagas[n] = true;
+        if(this.vagas[x] == false)
+            this.vagas[x] = true;
         else
-            this.vagas[n] = false;
+            this.vagas[x] = false;
         
     }
 
