@@ -16,11 +16,12 @@ public class Estacionamento
 
     /**
      * Construtor com parametro
+     * cria um estacionamento com o tamanhoTotalVagas estipulado
      */
-    public Estacionamento(int numeroTotalVagas) 
+    public Estacionamento(int tamanhoTotalVagas) 
     {
-        vagas = new boolean[numeroTotalVagas];
-        this.numeroTotalVagas = numeroTotalVagas;
+        vagas = new boolean[tamanhoTotalVagas];
+        numeroTotalVagas = tamanhoTotalVagas;
     }
 
 
