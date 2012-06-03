@@ -3,13 +3,14 @@ public class Estacionamento
 
     // vetor boolean de vagas do estacionamento
     private boolean vagas[];
-
+    private static int numeroTotalVagas;
     /**
      * Construtor Default
      */
     public Estacionamento() 
     {
         vagas = new boolean[10];
+        numeroTotalVagas = 10;
     }
 
 
@@ -19,6 +20,7 @@ public class Estacionamento
     public Estacionamento(int numeroTotalVagas) 
     {
         vagas = new boolean[numeroTotalVagas];
+        this.numeroTotalVagas = numeroTotalVagas;
     }
 
 
