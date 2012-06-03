@@ -72,7 +72,7 @@ public class Simulador_Garagem
         AlocaVaga corsa = new AlocaVaga();                      
         corsa.estaciona(parking, 2);                            // tentativa de alocação
 
-        System.out.println(parking.vagaSobrando(n));            // mostra que a vaga foi alocada
+        System.out.println(parking.vagaSobrando());            // mostra que a vaga foi alocada
 
         AlocaVaga gol = new AlocaVaga();
         gol.estaciona(parking, 1);
