@@ -1,24 +1,22 @@
-public class DesalocaVaga extends Evento
-{
+import java.util.Random
 
-    //Método utilizado para desestacionar um veiculo que se encontra na posição x;
-    public boolean desestaciona(Estacionamento veiculo, int x)
-    {
-        boolean flagAux;
-        
-        
-        flagAux = veiculo.getVaga(x);
+public class DesalocaVaga extends Evento{
+	
+	private Random aleatorio;
 
-        if(flagAux == false)
-        {
-            return false;
-        }
-        else
-        {
-            veiculo.setVaga(x);
-            return true;
-        }
-    
+    public DesalocaVaga(double data, double duracao){
+        this.data = data;
+        this.duracao = duracao;
     }
 
+    public void execucao(){
+    }
+    
+    public Evento gerarProximo(){
+		double hora;
+		aleatorio = new Random();
+		hora = aleatorio.nextDouble(120);
+        Evento e = new AlocaVaga(this.getData(), random);
+        return e;
+    }
 }
