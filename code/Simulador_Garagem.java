@@ -21,6 +21,7 @@ public class Simulador_Garagem{
 	* @return Boolean {true - se executou com sucesso | false - se não conseguiu executar }
 	*/
 	public static boolean executarAcao(Evento acao){
+		acao.execucao();
 		return true;
 	}
 
@@ -47,12 +48,13 @@ public class Simulador_Garagem{
 		while(!lista.isEmpty()){
 			tempAcao = new Evento(lista.getAcao());
 			if(tempAcao != null){
-				if (executarAcao(tempAcao)){
+				if(executarAcao(tempAcao())){
 					relogio.increaseTime(tempAcao.getDuracao());
 					lista.setAcao(tempAcao.gerarProximo());
 				}
 			}
 			else{
+				System.out.printf("Ação não executada");
 			}
 		}
 		Estatisca.geraRelatorio();
