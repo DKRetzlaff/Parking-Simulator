@@ -67,7 +67,7 @@ public class Simulador_Garagem
         int n = 20;
         Estacionamento parking = new Estacionamento(n);         // instancia(cria) o estacionamento com n vagas
 
-        System.out.println(parking.vagaSobrando(n));            // mostra vagas zeradas
+        System.out.println(parking.vagaSobrando());            // mostra vagas zeradas
 
         AlocaVaga corsa = new AlocaVaga();                      
         corsa.estaciona(parking, 2);                            // tentativa de alocação
@@ -77,12 +77,12 @@ public class Simulador_Garagem
         AlocaVaga gol = new AlocaVaga();
         gol.estaciona(parking, 1);
 
-        System.out.println(parking.vagaSobrando(n));
+        System.out.println(parking.vagaSobrando());
 
         DesalocaVaga gut = new DesalocaVaga();                  
         gut.desestaciona(parking, 1);                           // desaloca e mostra que a vaga volta a estar vaga
 
-        System.out.println(parking.vagaSobrando(n));
+        System.out.println(parking.vagaSobrando());
 	
 	}
 }
