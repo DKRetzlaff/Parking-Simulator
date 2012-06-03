@@ -1,10 +1,9 @@
-
 public class AlocaVaga extends Evento{
 
-
-    public void estaciona(Estacionamento a, int n){
-
-            a.setVaga(n);
+    //Troca o valor para true ou falso da posicao x
+    public void estaciona(Estacionamento setar, int x)
+    {
+            setar.setVaga(x);
     }
 
 
