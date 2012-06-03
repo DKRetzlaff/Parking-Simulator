@@ -50,6 +50,7 @@ public class Estacionamento
     /**
      * verifica qual vaga esta diponivel
      * @return a vaga disponivel ou , caso nao haja nenhuma disponivel retorna o tamanho do estacionamento + 1;
+     * motor faz o controle do erro
      */
     public int buscaVaga()
     {
