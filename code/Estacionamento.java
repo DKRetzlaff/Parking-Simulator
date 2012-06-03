@@ -49,18 +49,20 @@ public class Estacionamento
 
     /**
      * verifica quantas vagas estao diponiveis
-     * @param n -> numero de vagas total
      * @return numero de vagas disponiveis
      */
-    public int vagaSobrando(int n){
-        int i, cont = 0;
+    public int vagaSobrando()
+    {
+        int i, contadorVagasLivres = 0;
 
-        for (i = 0; i < n; i++){
+        for (i = 0; i < numeroTotalVagas; i++)
+        {
             if (vagas[i] == false)
-                cont++;
+            {
+                contadorVagasLivres++;
+            }
         }
-        
-     return cont;
+        return contadorVagasLivres;
     }
 
 }
