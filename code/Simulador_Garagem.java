@@ -31,26 +31,29 @@ public class Simulador_Garagem
 	* Execução de todas as ações
 	* @param args the command line arguments
 	*/
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args){
 		Relogio relogio = Relogio.getRelogio();
 		Evento tempAcao;
 		ListaDeAcoes lista = carregarListaDeSimulacao();
 		
-		if(lista == null) 
-		{
-			System.out.printf("Houve um erro ao carregar as ações. Vamos abortar");
+		int vagas;
+		double duracao;
+		
+		vagas = system.in()
+		duracao = system.in()
+		
+		Estacionamento garagem = new Estacionamento(vagas);
+		lista.setAcao(AbrirEstacionamento(duracao));		
+		
+		if(lista == null){
+			System.out.printf("Não há ações para simular");
 			System.exit(0);
 		}
-		
-		while( !lista.isEmpty() )
-		{
+
+		while(!lista.isEmpty()){
 			tempAcao = new Evento(lista.getAcao());
-			
-			if(tempAcao != null)
-			{
-				if (executarAcao(tempAcao))
-				{
+			if(tempAcao != null){
+				if (executarAcao(tempAcao)){
 					relogio.increaseTime(tempAcao.getDuracao());
 					lista.setAcao(tempAcao.gerarProximo());
 				}
@@ -60,29 +63,6 @@ public class Simulador_Garagem
 				/* Alterar */
 			}
 		}
-	
-	        /**
-         * Casos de teste
-         */
-        int n = 20;
-        Estacionamento parking = new Estacionamento(n);         // instancia(cria) o estacionamento com n vagas
 
-        System.out.println(parking.vagaSobrando());            // mostra vagas zeradas
-
-        AlocaVaga corsa = new AlocaVaga();                      
-        corsa.estaciona(parking, 2);                            // tentativa de alocação
-
-        System.out.println(parking.vagaSobrando());            // mostra que a vaga foi alocada
-
-        AlocaVaga gol = new AlocaVaga();
-        gol.estaciona(parking, 1);
-
-        System.out.println(parking.vagaSobrando());
-
-        DesalocaVaga gut = new DesalocaVaga();                  
-        gut.desestaciona(parking, 1);                           // desaloca e mostra que a vaga volta a estar vaga
-
-        System.out.println(parking.vagaSobrando());
-	
 	}
 }
