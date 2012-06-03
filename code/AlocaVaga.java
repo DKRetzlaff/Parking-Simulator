@@ -1,24 +1,17 @@
-import java.util.Random
-
 public class AlocaVaga extends Evento{
-    private double hora;
-    private Random aleatorio;	
-    private int n;
 	
-    public AlocaVaga(){
-	n = buscaVaga();
+    public AlocaVaga(double data, double duracao){
+	this.data = data;
+	this.duracao = duracao;
     }
 
     public void execucao(){
-	if(n > 0 && n <= vagas){
-            setVaga(n, false);
-	}
+	Estatistica.incCont();
+	Estatistica.incDuracao(this.duracao);
     }
     
     public Evento gerarProximo(){
-        aleatorio = new Random();
-        hora = aleatorio.nextDouble();
-	Evento e = new DesalocaVaga(n, hora);
-        return e;
+	Evento e = new DesalocaVaga(this.getData() + this.getDuracao());
+	return e;
     }
 }
