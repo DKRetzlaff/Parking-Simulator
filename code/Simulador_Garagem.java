@@ -5,9 +5,9 @@
 *
 */
 
-import java.util.Random
+import java.util.Random;
 
-public class Simulador_Garagem{
+public class Simulador_Garagem {
 
 	public static ListaDeAcoes carregarListaDeSimulacao(){
 		ListaDeAcoes temp = new ListaDeAcoes();
@@ -36,9 +36,12 @@ public class Simulador_Garagem{
 		ListaDeAcoes lista = carregarListaDeSimulacao();
 		
 		double duracao;
-		
-		duracao = random.nextDouble(30);		
-		lista.setAcao(AlocaVaga(duracao));		
+		relogio.getTime();
+		duracao = random.nextDouble();
+                
+                AlocaVaga carro = new AlocaVaga(duracao, relogio.getTime()); 
+                
+		lista.setAcao(carro);		
 		
 		if(lista == null){
 			System.out.printf("Não há ações para simular");
@@ -48,7 +51,7 @@ public class Simulador_Garagem{
 		while(!lista.isEmpty()){
 			tempAcao = new Evento(lista.getAcao());
 			if(tempAcao != null){
-				if(executarAcao(tempAcao())){
+				if(executarAcao(tempAcao)){
 					relogio.increaseTime(tempAcao.getDuracao());
 					lista.setAcao(tempAcao.gerarProximo());
 				}
@@ -57,6 +60,6 @@ public class Simulador_Garagem{
 				System.out.printf("Ação não executada");
 			}
 		}
-		Estatisca.geraRelatorio();
+		//Estatisca.geraRelatorio();
 	}
 }
