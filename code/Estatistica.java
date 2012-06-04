@@ -12,7 +12,7 @@ private static double tempoTotal;
         cont++;
     }
 
-    public static void incDuracao(int duracao){
+    public static void incDuracao(double duracao){
         tempoTotal += duracao;
     }
 
