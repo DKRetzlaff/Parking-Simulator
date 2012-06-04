@@ -6,12 +6,13 @@ public class AlocaVaga extends Evento{
     }
 
     public void execucao(){
+        
 	Estatistica.incCont();
-	Estatistica.incDuracao(this.duracao);
+	//Estatistica.incDuracao(this.duracao);
     }
     
     public Evento gerarProximo(){
-	Evento e = new DesalocaVaga(this.getData() + this.getDuracao());
+	DesalocaVaga e = new DesalocaVaga(this.getData(), this.getDuracao());
 	return e;
     }
 }
