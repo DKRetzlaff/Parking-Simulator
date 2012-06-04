@@ -1,10 +1,9 @@
-/*Trabalho de POO simulador de estacionamento 
+/*Trabalho de POO simulador de estacionamento
 *
-* Integrantes: 
+* Integrantes:
 * Andre G. Peil, Daniel K. Retzlaff, Guilherme P. B. Cousin,  Murilo F. Schmalfuss
 *
 */
-
 import java.util.Random;
 
 public class Simulador_Garagem {
@@ -34,22 +33,23 @@ public class Simulador_Garagem {
 		Relogio relogio = Relogio.getRelogio();
 		Evento tempAcao;
 		ListaDeAcoes lista = carregarListaDeSimulacao();
-		
+                Estatistica dados = new Estatistica();
+
 		double duracao;
 		relogio.getTime();
 		duracao = random.nextDouble();
-                
-                AlocaVaga carro = new AlocaVaga(duracao, relogio.getTime()); 
-                
-		lista.setAcao(carro);		
-		
+
+                Evento carro = new AlocaVaga(relogio.getTime(),duracao);
+
+		lista.setAcao(carro);
+
 		if(lista == null){
-			System.out.printf("Não há ações para simular");
+			System.out.printf("Não há ações para simular\n");
 			System.exit(0);
 		}
 
 		while(!lista.isEmpty()){
-			tempAcao = new Evento(lista.getAcao());
+			tempAcao = lista.getAcao();
 			if(tempAcao != null){
 				if(executarAcao(tempAcao)){
 					relogio.increaseTime(tempAcao.getDuracao());
@@ -57,9 +57,9 @@ public class Simulador_Garagem {
 				}
 			}
 			else{
-				System.out.printf("Ação não executada");
+				System.out.printf("Simulação Terminada\n");
 			}
 		}
-		//Estatisca.geraRelatorio();
+		dados.geraRelatorio();
 	}
 }
