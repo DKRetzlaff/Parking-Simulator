@@ -4,7 +4,7 @@ public class Relogio {
     private static double tempoTotal;
     
     private Relogio(){
-        time = 0;
+        tempo = 0;
         tempoTotal = 720;
     }
     
@@ -13,7 +13,7 @@ public class Relogio {
     }
     
     public void increaseTime(double newTime){
-        time += newTime;
+        tempo += newTime;
     }
     
     public double getTotal(){
