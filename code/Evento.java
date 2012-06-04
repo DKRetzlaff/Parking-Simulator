@@ -1,5 +1,4 @@
-﻿public class Evento
-﻿{
+public class Evento {
 	protected double data;
 	protected double duracao;
 	protected double desvioPadrao;
